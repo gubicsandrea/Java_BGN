@@ -14,6 +14,7 @@ public class Summing {
     public static void main(String[] args) {
         ShoppingCart cart = new ShoppingCart();
         Product product1 = new Product("lemezjátszó", 15000);
+        System.out.println(product1);
         cart.addProduct(product1);
         cart.addProduct(new Product("mikulássapka", 300));
         cart.addProduct(new Product("nyuszis papucs", 4000));
