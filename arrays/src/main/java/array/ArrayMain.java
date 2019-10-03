@@ -1,18 +1,27 @@
 package array;
 
+import java.util.Arrays;
+
 public class ArrayMain {
 
     public static void main(String[] args) {
-        int[] numbers = {1, 2, 7, 8, 10};
+        int[] numbers = {1, 7, 2, 8, 10, 5};
 
-        int[][] matrix = {{2, 3}, {1, 2, 3}, {7}};
+        Arrays.sort(numbers);
+        System.out.println(Arrays.toString(numbers));
 
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print(matrix[i][j] + " ");
-            }
-            System.out.println();
-        }
+        int sum = sumElements(numbers);
+        System.out.println("Összeg: " + sum);
+        System.out.println("Átlag: " + (double) sum / numbers.length);
+
+//        int[][] matrix = {{2, 3}, {1, 2, 3}, {7}};
+//
+//        for (int i = 0; i < matrix.length; i++) {
+//            for (int j = 0; j < matrix[i].length; j++) {
+//                System.out.print(matrix[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
 
 //        matrix = new int[4][];
 //        numbers = new int[5];
@@ -49,5 +58,13 @@ public class ArrayMain {
         for (String word : words) {
             System.out.println(word);
         }
+    }
+
+    private static int sumElements(int[] intArray) {
+        int result = 0;
+        for (int i = 0; i < intArray.length; i++) {
+            result += intArray[i];
+        }
+        return result;
     }
 }
