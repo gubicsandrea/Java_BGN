@@ -86,4 +86,22 @@ public class Car {
         positionX = positionX + deltaX;
         positionY += deltaY;
     }
+
+    public String toString() {
+        //Rendszám: XYZ-123
+        //Pozíció: (10,30)
+        //Sebesség: 23
+        String result = "Rendszám: "
+                + registrationNumber
+                + System.lineSeparator()
+                + "Position: ("
+                + positionX
+                + ","
+                + positionY
+                + ")"
+                + System.lineSeparator()
+                + "Sebesség: "
+                + speed;
+        return result;
+    }
 }
