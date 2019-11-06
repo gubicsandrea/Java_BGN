@@ -3,7 +3,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<Integer> numbers = List.of(4, 9, 11, -9, 32);
+        List<Integer> numbers = List.of(4, 9, 11, 9, 32);
         int sumOfNumbers = sum(numbers);
         System.out.println("Összeg: " + sumOfNumbers);
         double averageOfNumbers = average(numbers);
@@ -19,6 +19,12 @@ public class Main {
             System.out.println("Mind 50-nél nagyobb");
         } else {
             System.out.println("Nem mind nagyobb 50-nél");
+        }
+        Integer negative = firstNegativ(numbers);
+        if(negative == null) {
+            System.out.println("Nincs negatív");
+        } else {
+            System.out.println("Első negatív: " + negative);
         }
     }
 
@@ -64,5 +70,17 @@ public class Main {
             }
         }
         return all;
+    }
+
+    public static Integer firstNegativ(List<Integer> numbers) {
+        //TODO: implement linear search
+        Integer found = null;
+        for(Integer element: numbers) {
+            if(element < 0) {
+                found = element;
+                break;
+            }
+        }
+        return found;
     }
 }
